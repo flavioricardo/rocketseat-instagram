@@ -1,0 +1,10 @@
+header#main-header {
+    background: #FFF;
+    border-bottom: 1px solid #DDD;
+    height: 72px;
+}
+
+header#main-header .header-content {
+    max-width: 980px;
+    width: 100%;
+}
