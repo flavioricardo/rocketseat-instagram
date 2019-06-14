@@ -11,9 +11,9 @@ module.exports = {
 
     async store(req, res) {
         const { author, place, description, hashtags } = req.body;
-        const { filename: image } = req.file;
+        const { filename } = req.file;
 
-        const [name] = image.split('.');
+        const [name] = filename.split('.');
         const fileName = `${name}.jpg`;
 
         await sharp(req.file.path)
@@ -32,6 +32,8 @@ module.exports = {
             hashtags,
             fileName
         });
+
+        console.log(post);
 
         req.io.emit('post', post);
 
